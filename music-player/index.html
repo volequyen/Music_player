@@ -105,7 +105,26 @@
           $('.playlist').innerHTML = htmls.join('\n')
       }, 
 
+      handleEvents: function(){
+        const cd = $('.cd')
+        const cdWidth = cd.offsetWidth
+
+        document.onscroll = function(){
+          const scrollTop = window.scrollY || document.documentElement.scrollTop
+          const newCdWidth = cdWidth - scrollTop
+
+          if(newCdWidth > 0){
+            cd.style.width = newCdWidth + 'px'
+          } else {
+            cd.style.display = 'none'
+          }
+
+          cd.style.opacity = newCdWidth / cdWidth
+        }
+      },
+
       start: function(){
+        this.handleEvents()
         this.render();
       }
     }
