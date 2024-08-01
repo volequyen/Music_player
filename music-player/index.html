@@ -84,6 +84,18 @@
           singer: 'MIREI',
           path: 'assets/musics/NegaiAnokoronoKimie.mp3',
           image:'assets/img/negaianokoronokimie.jpg'
+        },
+        {
+          name: 'Nếu lúc đó',
+          singer: 'Tlinh',
+          path: 'assets/musics/neulucdo.mp3',
+          image:'assets/img/neulucdo.jpg'
+        },
+        {
+          name: 'Anh đã ổn hơn',
+          singer: 'RPT MCK',
+          path: 'assets/musics/anhdaonhon.mp3',
+          image:'assets/img/anhdaonhon.jpg'
         }
       ],
       render: function(){
@@ -113,11 +125,8 @@
           const scrollTop = window.scrollY || document.documentElement.scrollTop
           const newCdWidth = cdWidth - scrollTop
 
-          if(newCdWidth > 0){
-            cd.style.width = newCdWidth + 'px'
-          } else {
-            cd.style.display = 'none'
-          }
+         
+            cd.style.width = newCdWidth > 0 ? newCdWidth + 'px' : 0
 
           cd.style.opacity = newCdWidth / cdWidth
         }
